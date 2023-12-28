@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.screens
+package com.dscoding.storycrafters.ui.screens.read_story
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember

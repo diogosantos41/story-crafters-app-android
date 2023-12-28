@@ -5,10 +5,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.dscoding.storycrafters.ui.screens.CreateStoryScreen
-import com.dscoding.storycrafters.ui.screens.DashboardScreen
-import com.dscoding.storycrafters.ui.screens.ReadStoryScreen
-import com.dscoding.storycrafters.ui.screens.SavedStoriesScreen
+import com.dscoding.storycrafters.ui.screens.create_story.CreateStoryScreen
+import com.dscoding.storycrafters.ui.screens.dashboard.DashboardScreen
+import com.dscoding.storycrafters.ui.screens.read_story.ReadStoryScreen
+import com.dscoding.storycrafters.ui.screens.saved_stories.SavedStoriesScreen
 
 @Composable
 fun NavGraph(

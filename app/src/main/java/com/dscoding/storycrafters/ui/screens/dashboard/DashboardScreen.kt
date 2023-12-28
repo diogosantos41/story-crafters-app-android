@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.screens
+package com.dscoding.storycrafters.ui.screens.dashboard
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
