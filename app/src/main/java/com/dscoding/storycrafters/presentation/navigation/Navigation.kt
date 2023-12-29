@@ -1,14 +1,14 @@
-package com.dscoding.storycrafters.ui.navigation
+package com.dscoding.storycrafters.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.dscoding.storycrafters.ui.screens.create_story.CreateStoryScreen
-import com.dscoding.storycrafters.ui.screens.dashboard.DashboardScreen
-import com.dscoding.storycrafters.ui.screens.read_story.ReadStoryScreen
-import com.dscoding.storycrafters.ui.screens.saved_stories.SavedStoriesScreen
+import com.dscoding.storycrafters.presentation.screens.create_story.CreateStoryScreen
+import com.dscoding.storycrafters.presentation.screens.dashboard.DashboardScreen
+import com.dscoding.storycrafters.presentation.screens.read_story.ReadStoryScreen
+import com.dscoding.storycrafters.presentation.screens.saved_stories.SavedStoriesScreen
 
 @Composable
 fun NavGraph(

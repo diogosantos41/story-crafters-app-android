@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.base
+package com.dscoding.storycrafters.presentation.base
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

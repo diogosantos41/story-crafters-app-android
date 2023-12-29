@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.navigation
+package com.dscoding.storycrafters.presentation.navigation
 
 
 import com.dscoding.storycrafters.R

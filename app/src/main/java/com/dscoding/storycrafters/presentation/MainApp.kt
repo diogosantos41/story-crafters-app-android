@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui
+package com.dscoding.storycrafters.presentation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
@@ -21,10 +21,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.dscoding.storycrafters.ui.navigation.NavActions
-import com.dscoding.storycrafters.ui.navigation.NavGraph
-import com.dscoding.storycrafters.ui.navigation.toDestination
-import com.dscoding.storycrafters.ui.utils.TOP_APP_BAR_SLIDE_IN_ANIMATION_TARGET_OFFSET
+import com.dscoding.storycrafters.presentation.navigation.NavActions
+import com.dscoding.storycrafters.presentation.navigation.NavGraph
+import com.dscoding.storycrafters.presentation.navigation.toDestination
+import com.dscoding.storycrafters.presentation.utils.TOP_APP_BAR_SLIDE_IN_ANIMATION_TARGET_OFFSET
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

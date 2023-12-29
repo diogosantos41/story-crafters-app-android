@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.utils
+package com.dscoding.storycrafters.presentation.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 
 @Composable
-private fun <T> ObserveAsEvents(flow: Flow<T>, onEvent: (T) -> Unit) {
+fun <T> ObserveAsEvents(flow: Flow<T>, onEvent: (T) -> Unit) {
     val lifecycleOwner = LocalLifecycleOwner.current
     LaunchedEffect(flow, lifecycleOwner.lifecycle) {
         withContext(Dispatchers.Main.immediate) {

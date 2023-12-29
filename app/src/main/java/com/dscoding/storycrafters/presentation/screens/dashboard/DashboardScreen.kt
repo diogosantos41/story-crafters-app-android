@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.screens.dashboard
+package com.dscoding.storycrafters.presentation.screens.dashboard
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
-import com.dscoding.storycrafters.ui.navigation.NavActions
-import com.dscoding.storycrafters.ui.utils.DevicePreview
+import com.dscoding.storycrafters.presentation.navigation.NavActions
+import com.dscoding.storycrafters.presentation.utils.DevicePreview
 
 @Composable
 fun DashboardScreen(navActions: NavActions) {

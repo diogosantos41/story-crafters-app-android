@@ -8,7 +8,7 @@ data class Story(
     val title: String,
     val description: String,
     val content: String,
-    val category: List<String>,
+    val category: String,
     val language: String,
     val ageGroup: String,
     @PrimaryKey(autoGenerate = true)

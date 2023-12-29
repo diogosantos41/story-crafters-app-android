@@ -17,10 +17,10 @@ interface StoryDao {
     suspend fun getStoryById(id: Int): Story?
 
     @Upsert
-    suspend fun upsertStory(contact: Story)
+    suspend fun upsertStory(story: Story)
 
     @Delete
-    suspend fun deleteStory(contact: Story)
+    suspend fun deleteStory(story: Story)
 
 
 }

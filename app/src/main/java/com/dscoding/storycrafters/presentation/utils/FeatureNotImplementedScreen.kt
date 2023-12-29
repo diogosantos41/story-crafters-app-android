@@ -1,4 +1,4 @@
-package com.dscoding.storycrafters.ui.utils
+package com.dscoding.storycrafters.presentation.utils
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

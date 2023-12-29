@@ -1,11 +1,11 @@
-package com.dscoding.storycrafters.ui.screens.saved_stories
+package com.dscoding.storycrafters.presentation.screens.saved_stories
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.compose.rememberNavController
-import com.dscoding.storycrafters.ui.navigation.NavActions
-import com.dscoding.storycrafters.ui.utils.DevicePreview
-import com.dscoding.storycrafters.ui.utils.FeatureNotImplementedScreen
+import com.dscoding.storycrafters.presentation.navigation.NavActions
+import com.dscoding.storycrafters.presentation.utils.DevicePreview
+import com.dscoding.storycrafters.presentation.utils.FeatureNotImplementedScreen
 
 @Composable
 fun SavedStoriesScreen(navActions: NavActions) {
