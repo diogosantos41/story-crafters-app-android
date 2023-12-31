@@ -1,8 +1,5 @@
 package com.dscoding.storycrafters.presentation
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,29 +16,30 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.dscoding.storycrafters.presentation.navigation.NavActions
 import com.dscoding.storycrafters.presentation.navigation.NavGraph
-import com.dscoding.storycrafters.presentation.navigation.toDestination
-import com.dscoding.storycrafters.presentation.utils.TOP_APP_BAR_SLIDE_IN_ANIMATION_TARGET_OFFSET
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainApp() {
     val navController = rememberNavController()
     val navActions = remember(navController) { NavActions(navController) }
-    val currentDestination = navController.currentBackStackEntryAsState().value?.destination
+    val state = rememberMainAppState(navController = navController)
 
     Surface {
         Scaffold(topBar = {
-            TopAppBarUI(
-                visible = true,
-                title = currentDestination?.route?.toDestination()?.strResource?.asString(),
+            TopAppBar(
+                visible = state.showTopAppBar,
+                title = state.currentDestinationTitle,
                 onBackPressed = navActions.upPress
             )
         }, content = { paddingValues ->
-            Box(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
+            ) {
                 NavGraph(
                     navController = navController,
                     navActions = navActions,
@@ -51,22 +49,17 @@ fun MainApp() {
     }
 }
 
-
 @ExperimentalMaterial3Api
 @Composable
-fun TopAppBarUI(
+fun TopAppBar(
     visible: Boolean,
-    title: String?,
+    title: String,
     onBackPressed: () -> Unit
 ) {
-    AnimatedVisibility(
-        visible = visible,
-        enter = slideInVertically(),
-        exit = slideOutVertically(targetOffsetY = { TOP_APP_BAR_SLIDE_IN_ANIMATION_TARGET_OFFSET })
-    ) {
+    if (visible) {
         TopAppBar(title = {
             Text(
-                text = title ?: "",
+                text = title,
                 color = MaterialTheme.colorScheme.onBackground,
                 style = MaterialTheme.typography.titleMedium
             )

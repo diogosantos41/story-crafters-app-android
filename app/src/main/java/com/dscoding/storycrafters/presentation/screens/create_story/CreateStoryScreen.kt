@@ -44,11 +44,11 @@ fun CreateStoryScreen(
         .padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         TextField(
             value = state.title,
-            onValueChange = { onEvent(CreateStoryEvent.EnteredTitle(it)) })
+            onValueChange = { onEvent(CreateStoryEvent.SetTitle(it)) })
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
             value = state.content,
-            onValueChange = { onEvent(CreateStoryEvent.EnteredContent(it)) })
+            onValueChange = { onEvent(CreateStoryEvent.SetContent(it)) })
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = { onEvent(CreateStoryEvent.AddStory) }) {
             Text(text = "Create Story")

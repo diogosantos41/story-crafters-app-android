@@ -45,7 +45,7 @@ class CreateStoryViewModel @Inject constructor(private val storyRepository: Stor
                 }
             }
 
-            is CreateStoryEvent.EnteredTitle -> {
+            is CreateStoryEvent.SetTitle -> {
                 updateState(
                     uiState.value.copy(
                         title = event.value
@@ -53,7 +53,7 @@ class CreateStoryViewModel @Inject constructor(private val storyRepository: Stor
                 )
             }
 
-            is CreateStoryEvent.EnteredContent -> {
+            is CreateStoryEvent.SetContent -> {
                 updateState(
                     uiState.value.copy(
                         content = event.value
