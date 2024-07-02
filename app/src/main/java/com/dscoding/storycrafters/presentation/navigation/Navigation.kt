@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.dscoding.storycrafters.presentation.screens.create_story.CreateStoryScreen
 import com.dscoding.storycrafters.presentation.screens.dashboard.DashboardScreen
+import com.dscoding.storycrafters.presentation.screens.generate_cookies.GenerateCookiesScreen
 import com.dscoding.storycrafters.presentation.screens.read_story.ReadStoryScreen
 import com.dscoding.storycrafters.presentation.screens.saved_stories.SavedStoriesScreen
 
@@ -40,6 +41,11 @@ fun NavGraph(
             SavedStoriesScreen(navActions = navActions)
         }
         composable(
+            route = Destination.GenerateCookiesScreen.route,
+        ) {
+            GenerateCookiesScreen(navActions = navActions)
+        }
+        composable(
             route = Destination.SettingsScreen.route,
         ) {
             //SettingsScreen(navActions = navActions)
@@ -67,6 +73,10 @@ class NavActions(private val navController: NavController) {
 
     val goToSavedStoriesScreen: () -> Unit = {
         navController.navigate(Destination.SavedStoriesScreen.route)
+    }
+
+    val goToGenerateCookiesScreen: () -> Unit = {
+        navController.navigate(Destination.GenerateCookiesScreen.route)
     }
 
     val goToSettings: () -> Unit = {

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.dscoding.storycrafters.presentation.navigation.NavActions
+import com.dscoding.storycrafters.presentation.screens.common_components.TopAppBarUI
 import com.dscoding.storycrafters.presentation.utils.DevicePreview
 import com.dscoding.storycrafters.presentation.utils.ObserveAsEvents
 
@@ -39,21 +41,30 @@ fun CreateStoryScreen(
         }
     }
 
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        TextField(
-            value = state.title,
-            onValueChange = { onEvent(CreateStoryEvent.SetTitle(it)) })
-        Spacer(modifier = Modifier.height(20.dp))
-        TextField(
-            value = state.content,
-            onValueChange = { onEvent(CreateStoryEvent.SetContent(it)) })
-        Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = { onEvent(CreateStoryEvent.AddStory) }) {
-            Text(text = "Create Story")
+    Scaffold(topBar = {
+        TopAppBarUI(
+            title = "Create Story #",
+            onBackPressed = navActions.upPress
+        )
+    }, content = { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues), horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            TextField(
+                value = state.title,
+                onValueChange = { onEvent(CreateStoryEvent.SetTitle(it)) })
+            Spacer(modifier = Modifier.height(20.dp))
+            TextField(
+                value = state.content,
+                onValueChange = { onEvent(CreateStoryEvent.SetContent(it)) })
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(onClick = { onEvent(CreateStoryEvent.AddStory) }) {
+                Text(text = "Create Story")
+            }
         }
-    }
+    })
 }
 
 

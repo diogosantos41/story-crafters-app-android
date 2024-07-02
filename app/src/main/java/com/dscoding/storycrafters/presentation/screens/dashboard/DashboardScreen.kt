@@ -77,7 +77,7 @@ fun DashboardScreen(navActions: NavActions) {
                     .height(10.dp)
             )
             Button(
-                onClick = navActions.goToSavedStoriesScreen,
+                onClick = navActions.goToGenerateCookiesScreen,
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
